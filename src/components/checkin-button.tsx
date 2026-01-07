@@ -35,17 +35,19 @@ export function CheckInButton() {
         try {
             const res = await checkIn()
             if (res.success) {
-                toast.success(`Check-in successful! +${res.points} points`)
+                toast.success(t('checkin.success', { points: res.points || 0 }))
                 setPoints(prev => prev + (res.points || 0))
                 setCheckedIn(true)
             } else {
                 if (res.error === "Already checked in today") {
                     setCheckedIn(true)
+                    toast.info(t('checkin.alreadyCheckedIn'))
+                } else {
+                    toast.error(res.error ? t(`checkin.${res.error}`) : t('checkin.failed'))
                 }
-                toast.error(res.error || "Check-in failed")
             }
         } catch (e) {
-            toast.error("Network error")
+            toast.error(t('checkin.networkError'))
         } finally {
             setCheckingIn(false)
         }
