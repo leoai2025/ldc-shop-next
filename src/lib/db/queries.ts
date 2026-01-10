@@ -593,7 +593,7 @@ export async function getUsers(page = 1, pageSize = 20, q = '') {
             userId: loginUsers.userId,
             username: loginUsers.username,
             points: loginUsers.points,
-            isBlocked: loginUsers.isBlocked,
+            isBlocked: sql<boolean>`COALESCE(${loginUsers.isBlocked}, FALSE)`,
             lastLoginAt: loginUsers.lastLoginAt,
             createdAt: loginUsers.createdAt,
             orderCount: sql<number>`count(CASE WHEN ${orders.status} IN ('paid', 'delivered', 'refunded') THEN 1 END)::int`
