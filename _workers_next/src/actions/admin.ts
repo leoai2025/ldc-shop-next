@@ -385,7 +385,7 @@ export async function saveNotificationSettings(formData: FormData) {
     const resendApiKey = (formData.get('resendApiKey') as string || '').trim()
     const resendFromEmail = (formData.get('resendFromEmail') as string || '').trim()
     const resendFromName = (formData.get('resendFromName') as string || '').trim()
-    const resendEnabled = formData.get('resendEnabled') === 'on'
+    const resendEnabled = formData.get('resendEnabled') === 'true'
 
     await setSetting('resend_api_key', resendApiKey)
     await setSetting('resend_from_email', resendFromEmail)

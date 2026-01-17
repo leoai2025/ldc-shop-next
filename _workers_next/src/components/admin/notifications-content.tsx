@@ -199,13 +199,13 @@ export function NotificationsContent({ settings }: NotificationsContentProps) {
                         <div className="flex items-center gap-3">
                             <input
                                 type="checkbox"
-                                id="resendEnabled"
-                                name="resendEnabled"
+                                id="resendEnabledCheckbox"
                                 checked={resendEnabled}
                                 onChange={e => setResendEnabled(e.target.checked)}
                                 className="h-4 w-4 rounded border-gray-300"
                             />
-                            <Label htmlFor="resendEnabled">{t('admin.settings.email.enabled')}</Label>
+                            <input type="hidden" name="resendEnabled" value={resendEnabled ? 'true' : 'false'} />
+                            <Label htmlFor="resendEnabledCheckbox">{t('admin.settings.email.enabled')}</Label>
                         </div>
 
                         <div className="space-y-2">
@@ -279,42 +279,80 @@ export function NotificationsContent({ settings }: NotificationsContentProps) {
                 <CardHeader>
                     <CardTitle className="text-lg">{t('admin.settings.notifications.guide')}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                    <div className="space-y-3">
-                        <div className="flex gap-3">
-                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-medium">1</span>
-                            <div>
-                                <p className="font-medium">{t('admin.settings.notifications.step1Title')}</p>
-                                <p className="text-sm text-muted-foreground">{t('admin.settings.notifications.step1Desc')}</p>
-                                <a
-                                    href="https://t.me/BotFather"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center gap-1 text-sm text-primary hover:underline mt-1"
-                                >
-                                    @BotFather <ExternalLink className="h-3 w-3" />
-                                </a>
+                <CardContent className="space-y-6">
+                    {/* Telegram Guide */}
+                    <div>
+                        <h3 className="flex items-center gap-2 font-semibold mb-3">
+                            <Bell className="h-4 w-4" />
+                            Telegram Bot
+                        </h3>
+                        <div className="space-y-3">
+                            <div className="flex gap-3">
+                                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-medium">1</span>
+                                <div>
+                                    <p className="font-medium">{t('admin.settings.notifications.step1Title')}</p>
+                                    <p className="text-sm text-muted-foreground">{t('admin.settings.notifications.step1Desc')}</p>
+                                    <a
+                                        href="https://t.me/BotFather"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center gap-1 text-sm text-primary hover:underline mt-1"
+                                    >
+                                        @BotFather <ExternalLink className="h-3 w-3" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="flex gap-3">
+                                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-medium">2</span>
+                                <div>
+                                    <p className="font-medium">{t('admin.settings.notifications.step2Title')}</p>
+                                    <p className="text-sm text-muted-foreground">{t('admin.settings.notifications.step2Desc')}</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-3">
+                                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-medium">3</span>
+                                <div>
+                                    <p className="font-medium">{t('admin.settings.notifications.step3Title')}</p>
+                                    <p className="text-sm text-muted-foreground">{t('admin.settings.notifications.step3Desc')}</p>
+                                </div>
+                            </div>
+                            <div className="flex gap-3">
+                                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-medium">4</span>
+                                <div>
+                                    <p className="font-medium">{t('admin.settings.notifications.step4Title')}</p>
+                                    <p className="text-sm text-muted-foreground">{t('admin.settings.notifications.step4Desc')}</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="flex gap-3">
-                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-medium">2</span>
-                            <div>
-                                <p className="font-medium">{t('admin.settings.notifications.step2Title')}</p>
-                                <p className="text-sm text-muted-foreground">{t('admin.settings.notifications.step2Desc')}</p>
+                    </div>
+
+                    {/* Resend Email Guide */}
+                    <div className="border-t pt-4">
+                        <h3 className="flex items-center gap-2 font-semibold mb-3">
+                            <Mail className="h-4 w-4" />
+                            Resend Email API
+                        </h3>
+                        <div className="space-y-3">
+                            <div className="flex gap-3">
+                                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-medium">1</span>
+                                <div>
+                                    <p className="font-medium">{t('admin.settings.email.guideStep1Title')}</p>
+                                    <p className="text-sm text-muted-foreground">{t('admin.settings.email.guideStep1Desc')}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex gap-3">
-                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-medium">3</span>
-                            <div>
-                                <p className="font-medium">{t('admin.settings.notifications.step3Title')}</p>
-                                <p className="text-sm text-muted-foreground">{t('admin.settings.notifications.step3Desc')}</p>
+                            <div className="flex gap-3">
+                                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-medium">2</span>
+                                <div>
+                                    <p className="font-medium">{t('admin.settings.email.guideStep2Title')}</p>
+                                    <p className="text-sm text-muted-foreground">{t('admin.settings.email.guideStep2Desc')}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div className="flex gap-3">
-                            <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-medium">4</span>
-                            <div>
-                                <p className="font-medium">{t('admin.settings.notifications.step4Title')}</p>
-                                <p className="text-sm text-muted-foreground">{t('admin.settings.notifications.step4Desc')}</p>
+                            <div className="flex gap-3">
+                                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground text-xs font-medium">3</span>
+                                <div>
+                                    <p className="font-medium">{t('admin.settings.email.guideStep3Title')}</p>
+                                    <p className="text-sm text-muted-foreground">{t('admin.settings.email.guideStep3Desc')}</p>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -100,7 +100,9 @@
             "pointsDetails": "-{{points}} (可用: {{available}})",
             "total": "总计",
             "payWithPoints": "积分支付",
-            "proceedPayment": "前往支付"
+            "proceedPayment": "前往支付",
+            "emailLabel": "接收邮箱 (可选)",
+            "emailPlaceholder": "输入用于接收卡密的邮箱"
         },
         "warningTitle": "购买提醒",
         "confirmWarning": "我已了解，继续购买",
@@ -274,7 +276,13 @@
                 "testButton": "发送测试",
                 "testSuccess": "测试邮件发送成功！请检查收件箱。",
                 "testFailed": "测试邮件发送失败：{{error}}",
-                "enterTestEmail": "请输入测试邮箱地址"
+                "enterTestEmail": "请输入测试邮箱地址",
+                "guideStep1Title": "注册账号",
+                "guideStep1Desc": "访问 https://resend.com 注册一个账号。",
+                "guideStep2Title": "验证域名",
+                "guideStep2Desc": "在后台添加你的域名（Domains），并按照提示添加 DNS 记录完成验证。",
+                "guideStep3Title": "获取 API Key",
+                "guideStep3Desc": "在 API Keys 页面创建一个新的 Key，权限选择 Sending access 即可。"
             }
         },
         "export": {

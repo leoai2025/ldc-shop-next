@@ -100,7 +100,9 @@
             "pointsDetails": "-{{points}} (Avail: {{available}})",
             "total": "Total",
             "payWithPoints": "Pay with Points",
-            "proceedPayment": "Proceed to Payment"
+            "proceedPayment": "Proceed to Payment",
+            "emailLabel": "Email (Optional)",
+            "emailPlaceholder": "Enter email to receive card key"
         },
         "warningTitle": "Important Notice",
         "confirmWarning": "I understand, continue",
@@ -274,7 +276,13 @@
                 "testButton": "Send Test",
                 "testSuccess": "Test email sent! Check your inbox.",
                 "testFailed": "Test email failed: {{error}}",
-                "enterTestEmail": "Please enter a test email address"
+                "enterTestEmail": "Please enter a test email address",
+                "guideStep1Title": "Sign Up",
+                "guideStep1Desc": "Visit https://resend.com and sign up for an account.",
+                "guideStep2Title": "Verify Domain",
+                "guideStep2Desc": "Add your domain in the dashboard and verify it by adding the required DNS records.",
+                "guideStep3Title": "Get API Key",
+                "guideStep3Desc": "Create a new API Key in the API Keys section with Sending access."
             }
         },
         "export": {
