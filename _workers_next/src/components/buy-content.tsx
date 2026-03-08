@@ -180,7 +180,7 @@ export function BuyContent({
                             <div className="relative">
                                 <div className="grid gap-0 lg:grid-cols-[minmax(0,0.98fr)_minmax(0,1.02fr)]">
                                     <div className="relative border-b border-border/20 p-5 md:p-6 lg:border-b-0 lg:border-r">
-                                        <div className="relative flex h-full min-h-[18rem] items-center justify-center overflow-hidden rounded-[1.65rem] bg-muted/40 ring-1 ring-border/20 ring-inset p-5 md:min-h-[22rem] md:p-8">
+                                        <div className="relative flex h-full min-h-[18rem] items-center justify-center overflow-hidden rounded-[1.65rem] bg-card/50 p-5 md:min-h-[22rem] md:p-8">
                                             {product.image ? (
                                                 <div className="relative aspect-[4/3] w-full max-w-[32rem]">
                                                     <Image
@@ -196,7 +196,6 @@ export function BuyContent({
                                                     <ProductImagePlaceholder productId={product.id} productName={product.name} size="md" />
                                                 </div>
                                             )}
-                                            <div className="pointer-events-none absolute inset-0 rounded-[1.65rem] ring-1 ring-black/[0.03] ring-inset dark:ring-white/[0.04]" />
                                         </div>
                                     </div>
 

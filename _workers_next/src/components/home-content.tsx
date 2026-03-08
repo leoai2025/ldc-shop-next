@@ -298,7 +298,7 @@ export function HomeContent({ products, announcement, visitorCount, categories =
                                 <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                                 <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.12),_transparent_32%)] opacity-80 dark:bg-[radial-gradient(circle_at_top_right,_rgba(96,165,250,0.14),_transparent_36%)]" />
 
-                                <div className="relative m-4 aspect-[4/3] overflow-hidden rounded-[1.45rem] bg-muted/40 ring-1 ring-border/20 ring-inset">
+                                <div className="relative m-4 aspect-[4/3] overflow-hidden rounded-[1.45rem] bg-card/50">
                                     {product.image ? (
                                         <Image
                                             src={product.image}
@@ -313,7 +313,6 @@ export function HomeContent({ products, announcement, visitorCount, categories =
                                             <ProductImagePlaceholder productId={product.id} productName={product.name} size="sm" />
                                         </div>
                                     )}
-                                    <div className="pointer-events-none absolute inset-0 rounded-[1.45rem] ring-1 ring-black/[0.03] ring-inset dark:ring-white/[0.04]" />
                                     <div className="absolute left-3 right-3 top-3 flex items-start justify-between gap-2">
                                         {product.category && product.category !== "general" ? (
                                             <Badge className="h-7 rounded-full border border-border/40 bg-background/86 px-3 text-[10px] font-medium capitalize text-foreground shadow-sm">
@@ -364,11 +363,11 @@ export function HomeContent({ products, announcement, visitorCount, categories =
                                         {product.descriptionPlain || product.description || t("buy.noDescription")}
                                     </div>
 
-                                    <div className="mt-auto rounded-xl border border-primary/15 bg-primary/5 px-4 py-3.5">
+                                    <div className="mt-auto rounded-[1.3rem] border border-border/30 bg-muted/30 px-4 py-3">
                                         <div className="flex items-end justify-between gap-4">
                                             <div className="min-w-0">
                                                 <div className="flex flex-wrap items-baseline gap-2">
-                                                    <span className="whitespace-nowrap text-2xl font-bold tracking-tight text-primary tabular-nums">
+                                                    <span className="whitespace-nowrap text-2xl font-semibold tracking-tight text-foreground tabular-nums">
                                                         {Number(product.price)}
                                                     </span>
                                                     <span className="text-xs font-medium uppercase tracking-[0.16em] text-muted-foreground">
@@ -391,7 +390,7 @@ export function HomeContent({ products, announcement, visitorCount, categories =
                                                 </div>
                                             </div>
 
-                                            <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/20 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
+                                            <div className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-border/40 bg-background/80 text-muted-foreground transition-transform duration-300 group-hover:border-primary/30 group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5">
                                                 <ArrowRight className="h-4.5 w-4.5" />
                                             </div>
                                         </div>
