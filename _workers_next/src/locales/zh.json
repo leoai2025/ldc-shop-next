@@ -811,6 +811,7 @@
         "resubmit": "重新提交",
         "navTitle": "LDC 导航",
         "navSubtitle": "发现更多基于 ldc-shop 项目搭建的商城",
+        "navStoreCount": "共 {{count}} 家商店",
         "navSearch": "搜索站点...",
         "search": "搜索",
         "navEmpty": "暂无站点",

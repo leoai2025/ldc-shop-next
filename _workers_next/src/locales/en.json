@@ -811,6 +811,7 @@
         "resubmit": "Resubmit",
         "navTitle": "LDC Navigator",
         "navSubtitle": "Discover more stores built with the ldc-shop project",
+        "navStoreCount": "{{count}} stores",
         "navSearch": "Search stores...",
         "search": "Search",
         "navEmpty": "No stores yet.",

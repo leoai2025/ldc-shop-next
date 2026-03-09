@@ -31,9 +31,16 @@ export default async function NavigatorPage({ searchParams }: { searchParams?: P
                         <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">
                             {t('registry.navTitle')}
                         </h1>
-                        <p className="text-muted-foreground max-w-2xl">
-                            {t('registry.navSubtitle')}
-                        </p>
+                        <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                            <p className="max-w-2xl">
+                                {t('registry.navSubtitle')}
+                            </p>
+                            {!!filtered.length && (
+                                <span className="inline-flex items-center rounded-full border border-border/60 bg-background/80 px-3 py-1 text-xs font-medium">
+                                    {t('registry.navStoreCount', { count: filtered.length })}
+                                </span>
+                            )}
+                        </div>
                     </div>
 
                     <form className="flex flex-col gap-3 md:flex-row md:items-center">
